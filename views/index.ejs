@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MongoDB Movies</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css"
+    />
+  </head>
+
+  <body>
+    <main class="container">
+      <h1>Movies Database</h1>
+      <section class="container">
+        <form class="container" action="/" method="get">
+          <label for="title">title:</label>
+          <input type="text" id="title" name="title" />
+          <input type="submit" value="search" />
+        </form>
+      </section>
+      <% for (const doc of documents) { %>
+      <article>
+        <header><%= doc.title %></header>
+        <img src="<%= doc.poster %>" alt="" />
+        <footer>Año de lanzamiento: <%= doc.year %></footer>
+      </article>
+      <% } %>
+    </main>
+  </body>
+</html>
